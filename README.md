@@ -17,12 +17,20 @@ Accurately estimating house prices is critical for buyers, sellers, and real est
 This project addresses these challenges using a robust sklearn Pipeline + ColumnTransformer architecture.
 
 ## Solution Architecture
+The system follows a production-style machine learning pipeline:
 
-Raw Input Data -> Outlier Handling (Training Phase) -> ColumnTransformer [One-Hot Encoding (Nominal Features), Numeric Feature Pass-through] -> XGBoost Regressor (Tuned) -> Prediction Output -> Streamlit Web App
+1. Raw housing data ingestion
+2. Outlier removal applied during training only
+3. Feature preprocessing using sklearn ColumnTransformer:
+   - One-Hot Encoding for categorical features
+   - Numeric feature pass-through
+4. Price prediction using a tuned XGBoost Regressor
+5. Real-time inference via Streamlit web application
+
+All preprocessing and model inference are encapsulated inside a single sklearn Pipeline, ensuring feature consistency between training and deployment.
 
 #### Encoding Strategy
-Although the original coursework explored target encoding for high-cardinality features, 
-the deployed production pipeline uses One-Hot Encoding to ensure:
+Although the original coursework explored target encoding for high-cardinality features, the deployed production pipeline uses One-Hot Encoding to ensure:
 - Leakage-free inference
 - Robust handling of unseen categories
 - Simpler and more reliable deployment
