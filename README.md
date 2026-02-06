@@ -18,21 +18,9 @@ This project addresses these challenges using a robust sklearn Pipeline + Column
 
 ## Solution Architecture
 
-Raw Input Data
-      ↓
-Outlier Handling (Training Phase)
-      ↓
-ColumnTransformer
- ├─ One-Hot Encoding (Nominal Features)
- └─ Numeric Feature Pass-through
-      ↓
-XGBoost Regressor (Tuned)
-      ↓
-Prediction Output
-      ↓
-Streamlit Web App
+Raw Input Data -> Outlier Handling (Training Phase) -> ColumnTransformer [One-Hot Encoding (Nominal Features), Numeric Feature Pass-through] -> XGBoost Regressor (Tuned) -> Prediction Output -> Streamlit Web App
 
-### Encoding Strategy
+#### Encoding Strategy
 Although the original coursework explored target encoding for high-cardinality features, 
 the deployed production pipeline uses One-Hot Encoding to ensure:
 - Leakage-free inference
@@ -42,24 +30,21 @@ the deployed production pipeline uses One-Hot Encoding to ensure:
 
 ## Technologies Used
 
-**Programming:** Python
-**Machine Learning:** XGBoost, scikit-learn
-**Data Processing:** Pandas, NumPy
-**Model Management:** sklearn Pipeline, ColumnTransformer, joblib
-**Web App:** Streamlit
-**Deployment:** Streamlit Cloud
-**Dataset:** house-prices-advanced-regression-techniques Challenge Dataset (Kaggle)
+**Programming:** Python <br>
+**Machine Learning:** XGBoost, scikit-learn <br>
+**Data Processing:** Pandas, NumPy <br>
+**Model Management:** sklearn Pipeline, ColumnTransformer, joblib <br>
+**Web App:** Streamlit <br>
+**Deployment:** Streamlit Cloud <br>
+**Dataset:** house-prices-advanced-regression-techniques Challenge Dataset (Kaggle) <br>
 
 ## Model Details
 
 - **Model:** XGBoost Regressor
 - **Hyperparameters:**
-n_estimators = 100
-max_depth = 3
-learning_rate = 0.1
-subsample = 0.8
+n_estimators = 100, max_depth = 3, learning_rate = 0.1, subsample = 0.8
 
-### Feature Handling
+#### Feature Handling
 - 36 Numerical Features
 - 40 Nominal Categorical Features → One-Hot Encoding
 
