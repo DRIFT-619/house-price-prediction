@@ -1,24 +1,35 @@
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
 # Jupyter
 .ipynb_checkpoints/
 
 # Virtual environments
+env/
 venv/
-.env/
 .venv/
 
 # OS files
 .DS_Store
+Thumbs.db
 
-# ML models
-*.joblib
-*.pkl
-
-# Streamlit cache
+# Streamlit
 .streamlit/
+
+# Model artifacts (keep if you want to version them)
+# Uncomment if model becomes large
+# *.joblib
 
 # Logs
 *.log
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
