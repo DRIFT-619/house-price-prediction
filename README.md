@@ -62,7 +62,7 @@ The complete preprocessing and model logic is encapsulated in a single sklearn P
 
 ## Live Application
 
-**Live Demo:** (Add Streamlit Cloud URL here after deployment)
+**Live Demo:** (https://house-price-prediction-hihl26gt5pnamvv6qzcgh4.streamlit.app/)
 
 Users can input property characteristics through an interactive UI and receive an estimated house price instantly.
 
